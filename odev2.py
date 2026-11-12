@@ -18,7 +18,7 @@ number1= int(input('Enter a number1:'))
 number2= int(input('Enter a number2:'))
 print('number1 is {}'.format(number1))
 print('number2 is {}'.format(number2))
-new= number1,number2=number2,number1 
+number1,number2=number2,number1 
 print('new number1 is: {}'.format(number1))
 print('new number2 is: {}'.format(number2))
 
