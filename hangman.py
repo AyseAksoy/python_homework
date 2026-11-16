@@ -123,7 +123,7 @@ def hangman(secret_word):
         print('Available letters:', get_available_letters(letters_guessed))
         guess = input('Please guess a letter: ').lower()
 
-        if not guess.isalpha():                                    # CASE 1: input is not a letter
+        if not guess.isalpha() or len(guess) != 1:                 # CASE 1: input is not a letter
             if warnings_remaining > 0:                             #   if the user still has warnings
                 warnings_remaining -= 1                            #   lose one warning
                 print('Oops! That is not a valid letter. You have', warnings_remaining, 'warnings left:', get_guessed_word(secret_word, letters_guessed))
@@ -252,7 +252,7 @@ def hangman_with_hints(secret_word):
             print('Possible word matches are:')
             show_possible_matches(get_guessed_word(secret_word, letters_guessed))
 
-        elif not guess.isalpha():                                  # CASE 1: input is not a letter
+        elif not guess.isalpha() or len(guess) != 1:               # CASE 1: input is not a letter
             if warnings_remaining > 0:
                 warnings_remaining -= 1
                 print('Oops! That is not a valid letter. You have', warnings_remaining, 'warnings left:', get_guessed_word(secret_word, letters_guessed))
